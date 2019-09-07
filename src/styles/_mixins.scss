@@ -1,0 +1,115 @@
+@mixin bordered {
+  border: 1px solid $border-color;
+}
+.bordered {
+  @include bordered;
+}
+
+@mixin round-bordered {
+  @include bordered;
+
+  border-radius: $border-radius;
+}
+.round-bordered {
+  @include round-bordered;
+}
+
+@mixin pad-content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.pad-content {
+  @include pad-content;
+}
+
+@mixin pad-content-all {
+  padding: 30px;
+}
+.pad-content-all {
+  @include pad-content-all;
+}
+
+@mixin bordered-dir($dir, $size: 1px, $color: $border-color, $radius: false) {
+  border-#{$dir}: $size solid $color;
+
+  @if ($radius) {
+    border-radius: $border-radius;
+  }
+}
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.no-select {
+  @include no-select;
+}
+
+@mixin flex {
+  display: flex;
+  flex-direction: row;
+}
+.flex {
+  @include flex;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-column {
+  @include flex-column;
+}
+
+@mixin shadow {
+  box-shadow: 0 0 3px 0 rgba(204, 204, 204, .5);
+}
+.shadow {
+  @include shadow;
+}
+
+@mixin inset-shadow {
+  box-shadow: inset 0 0 3px rgba(204, 204, 204, .5);
+}
+.inset-shadow {
+  @include shadow;
+}
+
+.quad {
+  width: 0.5rem;
+  display: inline-block;
+}
+
+.right {
+  float: right;
+}
+
+@mixin col {
+  &:not(:first-child) {
+    margin-left: 1.18rem;
+  }
+}
+.col {
+  @include col;
+}
+
+@mixin row {
+  &:not(:first-child) {
+    margin-top: 1.18rem;
+  }
+}
+.row {
+  @include row;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include col;
+    
+    width: 100% / 12 * $i;
+  }
+}

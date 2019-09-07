@@ -1,1 +1,101 @@
 
+@import 'variables';
+@import 'mixins';
+
+@import 'icon';
+@import 'button';
+@import 'left-nav';
+@import 'modal';
+@import 'form';
+@import 'card';
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #d5dae3;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  height: 90px;
+  background-color: $base-color;
+}
+
+footer {
+  height: 130px;
+  background-color: $footer-color;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 0 60px 160px;
+  height: 100%;
+  background-color: $content-color;
+
+  .breadcrumbs {
+    text-transform: uppercase;
+    color: $muted-color;
+
+    h5 {
+      font-weight: 300;
+    }
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-grow: 1;
+    height: 100%;
+
+    nav {
+      width: 360px;
+      margin-right: 30px;
+    }
+  
+    > .content {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      padding-right: 160px;
+    }
+  }
+}
+
+h1 {
+  margin: 5px 0 10px;
+  font-weight: 400;
+}
+
+h4 {
+  color: $muted-color;
+  margin: 5px 0;
+  font-weight: 400;
+}

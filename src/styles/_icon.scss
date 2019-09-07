@@ -1,0 +1,9 @@
+$icon-sizes: ("small": 32, "medium": 64px, "large": 80px);
+
+@each $key, $size in $icon-sizes {
+  .icon-#{$key} {
+    background-color: #ffffff;
+    width: $size;
+    height: $size;
+  }
+}

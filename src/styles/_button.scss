@@ -1,0 +1,23 @@
+button {
+  @include round-bordered;
+
+  height: 40px;
+  line-height: 40px;
+  min-width: 120px;
+  padding-right: 0 20px;
+  border: none;
+  outline: none;
+  background-color: $secondary-color;
+  color: $secondary-text-color;
+  font-size: $button-text-size;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($secondary-color, 5%);
+  }
+
+  &:active {
+    line-height: 41px;
+  }
+}

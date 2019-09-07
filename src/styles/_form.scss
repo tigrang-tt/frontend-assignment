@@ -1,0 +1,52 @@
+@mixin input {
+  @include round-bordered;
+  @include shadow;
+
+  font-size: 16px;
+  padding: 10px;
+  outline: none;
+
+  &::placeholder {
+    color: #d5dae3;
+  }
+
+  &:focus {
+    @include inset-shadow;
+  }
+}
+
+.form-control {
+  @include flex-column;
+
+  margin-bottom: 32px;
+  &.has-error {
+    margin-bottom: 0;
+  }
+
+  .form-control-title {
+    font-size: $title-size;
+    margin-bottom: 8px;
+    color: $muted-color;
+    text-transform: uppercase;
+  }
+
+  .form-control-error {
+    font-size: $error-size;
+    margin: 4px 0 16px;
+    color: $error-color;
+  }
+}
+
+input[type='text'] {
+  @include input;
+
+  height: 48px;
+  width: 50%;
+}
+
+textarea {
+  @include input;
+
+  resize: none;
+  height: 48px * 3;
+}

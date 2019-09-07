@@ -1,0 +1,37 @@
+.card {
+  @include round-bordered;
+
+  width: 100%;
+  background-color: #ffffff;
+
+  .card-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 20px;
+  }
+
+  .card-content {
+    padding: 0 20px 20px;
+
+    .chart {
+      background-color: bisque;
+      height: 180px;
+    }
+  }
+
+  .card-list {
+    .card-list-item {
+      height: 90px;
+
+      &:first-child {
+        @include bordered-dir(top);
+      }
+    }
+
+    &.dashed {
+      .card-list-item {
+        @include bordered-dir(top);
+      }
+    }
+  }
+}
